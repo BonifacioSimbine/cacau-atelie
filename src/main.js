@@ -33,15 +33,27 @@ const P=[
 ];
 const $=s=>document.querySelector(s);const fmt=n=>n.toLocaleString("pt-PT")+" "+CFG.moeda;
 const wa=t=>`https://wa.me/${CFG.tel}?text=${encodeURIComponent(t)}`;
-document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(`Olá, ${CFG.marca}! Gostaria de fazer um pedido.`);a.target="_blank";a.rel="noopener"});
+const orderTemplate=`Olá, ${CFG.marca}! Gostaria de fazer um pedido:
+Produto(s):
+Quantidade:
+Data desejada:
+Personalização/observações:
+Bairro/local de entrega:
+Podem confirmar a disponibilidade e o custo da entrega?`;
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(orderTemplate);a.target="_blank";a.rel="noopener"});
 document.querySelectorAll("img[data-i]").forEach(i=>i.src=IMGS[i.dataset.i]);
 document.querySelectorAll("[data-bg]").forEach(e=>{const o=e.dataset.ov;e.style.backgroundImage=(o?`linear-gradient(${o},${o}),`:"")+`url(${IMGS[e.dataset.bg]})`});
 $("#yr").textContent=new Date().getFullYear();
 function grid(){
  ["bolos","festa","biscoitos"].forEach(cat=>{$("#g-"+cat).innerHTML=P.filter(x=>x.c==cat).map(x=>{
-  const m=wa(`Olá, ${CFG.marca}! Quero pedir: ${x.t}${x.p==null?"":" ("+fmt(x.p)+")"}.
-O meu bairro/local de entrega: 
-Podem confirmar o custo de entrega?`);
+  const m=wa(`Olá, ${CFG.marca}! Gostaria de encomendar:
+Produto: ${x.t}
+${x.p==null?"Preço: sob consulta":"Preço indicado: "+fmt(x.p)}
+Quantidade: 1
+Data desejada:
+Personalização/observações:
+Bairro/local de entrega:
+Podem confirmar a disponibilidade e o custo da entrega?`);
   return `<article class="card"><div class="pic"><img src="${IMGS[x.img]}" alt="${x.t}" loading="lazy"></div><div class="body"><h3>${x.t}</h3><p>${x.d}</p><div class="buy"><span class="price${x.p==null?" q":""}">${x.p==null?"Sob consulta":fmt(x.p)}</span><a class="btn wa" href="${m}" target="_blank" rel="noopener"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Pedir</a></div></div></article>`}).join("")});
 }
 $("#askBtn").href=wa(`Olá, ${CFG.marca}! Qual é o custo de entrega para o meu bairro?`);
