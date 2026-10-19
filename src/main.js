@@ -33,14 +33,7 @@ const P=[
 ];
 const $=s=>document.querySelector(s);const fmt=n=>n.toLocaleString("pt-PT")+" "+CFG.moeda;
 const wa=t=>`https://wa.me/${CFG.tel}?text=${encodeURIComponent(t)}`;
-const orderTemplate=`Olá, ${CFG.marca}! Gostaria de fazer um pedido:
-Produto(s):
-Quantidade:
-Data desejada:
-Personalização/observações:
-Bairro/local de entrega:
-Podem confirmar a disponibilidade e o custo da entrega?`;
-document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(orderTemplate);a.target="_blank";a.rel="noopener"});
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(`Olá, ${CFG.marca}! Gostaria de fazer um pedido.`);a.target="_blank";a.rel="noopener"});
 document.querySelectorAll("img[data-i]").forEach(i=>i.src=IMGS[i.dataset.i]);
 document.querySelectorAll("[data-bg]").forEach(e=>{const o=e.dataset.ov;e.style.backgroundImage=(o?`linear-gradient(${o},${o}),`:"")+`url(${IMGS[e.dataset.bg]})`});
 $("#yr").textContent=new Date().getFullYear();
