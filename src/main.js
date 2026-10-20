@@ -39,16 +39,8 @@ document.querySelectorAll("[data-bg]").forEach(e=>{const o=e.dataset.ov;e.style.
 $("#yr").textContent=new Date().getFullYear();
 function grid(){
  ["bolos","festa","biscoitos"].forEach(cat=>{$("#g-"+cat).innerHTML=P.filter(x=>x.c==cat).map(x=>{
-  const m=wa(`Olá, ${CFG.marca}! Gostaria de encomendar ${x.t}.`);
-  return `<article class="card">
-    <img src="${IMGS[x.img]}" alt="${x.t}" loading="lazy">
-    <div class="card-content">
-      <h3>${x.t}</h3>
-      <p>${x.d}</p>
-      <p class="price">${x.p==null?"Sob encomenda":fmt(x.p)}</p>
-      <a href="${m}" target="_blank" rel="noopener">Encomendar</a>
-    </div>
-  </article>`;
+  const m=wa(`Olá, ${CFG.marca}! Quero encomendar ${x.t}.`);
+  return `<article class="card"><div class="pic"><img src="${IMGS[x.img]}" alt="${x.t}" loading="lazy"></div><div class="body"><h3>${x.t}</h3><p>${x.d}</p><div class="buy"><span class="price">${x.p==null?"Sob encomenda":fmt(x.p)}</span><a class="btn wa" href="${m}" target="_blank" rel="noopener"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Pedir no WhatsApp</a></div></div></article>`;
  }).join("")});
 }
 
