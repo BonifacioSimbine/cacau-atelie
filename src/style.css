@@ -44,6 +44,7 @@ section{padding:60px 0}
 .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
 .head h2{font-size:clamp(2rem,4vw,3rem)}
 .head p{color:var(--mut);margin:8px 0 0;max-width:30em}
+.swipe-hint{display:none}
 .tabs{display:flex;gap:8px}
 .tab{border:1.5px solid var(--line);background:transparent;color:var(--ink);font:500 .95rem Outfit,sans-serif;padding:9px 18px;border-radius:999px;cursor:pointer}
 .tab[aria-pressed="true"]{background:var(--cacau);color:var(--bg);border-color:var(--cacau)}
@@ -110,3 +111,23 @@ a,button{-webkit-tap-highlight-color:transparent}
 .links a{display:inline-flex;align-items:center;height:40px;line-height:1}
 .price.q{font-size:.95rem}
 @media (max-width:420px){.nav .btn{padding:0 14px}}
+@media (max-width:980px){
+ .swipe-hint{display:block;margin-top:10px!important;color:var(--ber2)!important;font-size:.85rem!important;font-weight:600}
+ .rail .card{flex-basis:84%;max-width:360px}
+ .rail .buy{flex-direction:column;align-items:stretch}
+ .rail .buy .price{align-self:flex-start}
+ .rail .buy .btn{width:100%;min-height:44px;padding:10px 12px;white-space:normal}
+ .burger{flex-shrink:0}
+}
+@media (max-width:360px){
+ .wrap{padding-inline:14px}
+ .nav{gap:6px;padding:6px}
+ .logo{font-size:1rem;gap:6px}
+ .logo i{width:30px;height:30px;flex:0 0 30px}
+ .nav .btn{width:42px;min-width:42px;padding:0}
+ .nav .btn span{display:none}
+ .nav .burger{width:42px;height:42px}
+ .mob{left:14px;right:14px}
+ .hero h1{font-size:clamp(2rem,10vw,2.5rem)}
+ .rail{margin-inline:-14px;padding-inline:14px;scroll-padding-left:14px}
+}
