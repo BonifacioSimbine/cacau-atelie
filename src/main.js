@@ -22,8 +22,9 @@ import img20 from "./assets/bolo-citrico.jpg";
 import img21 from "./assets/bolo-no-pote.jpg";
 import img22 from "./assets/cupcakes.jpg";
 import img23 from "./assets/bolo-coco.jpg";
+import img24 from "./assets/bolo-no-pote-chocolate.jpg";
 const CFG={tel:"258856833194",marca:"Cacau Ateliê",moeda:"MT"};
-const IMGS={1:img1,2:img2,3:img3,4:img4,5:img5,6:img6,7:img7,8:img8,9:img9,10:img10,11:img11,12:img12,13:img13,14:img14,15:img15,16:img16,17:img17,18:img18,19:img19,20:img20,21:img21,22:img22,23:img23};
+const IMGS={1:img1,2:img2,3:img3,4:img4,5:img5,6:img6,7:img7,8:img8,9:img9,10:img10,11:img11,12:img12,13:img13,14:img14,15:img15,16:img16,17:img17,18:img18,19:img19,20:img20,21:img21,22:img22,23:img23,24:img24};
 const P=[
 {c:"bolos",t:"Bolo de chocolate tradicional",d:"Massa húmida de cacau com ganache brilhante e granulado crocante.",p:450,img:1},
 {c:"bolos",t:"Dupla de bolos tradicionais",d:"Dois bolos individuais na mesma caixa. Para partilhar ou levar.",p:800,img:2},
@@ -45,9 +46,11 @@ const P=[
 {c:"salgados",t:"Enroladinhos assados",d:"Enroladinhos assados, vendidos à dúzia.",p:180,u:"1 dúzia",img:18},
 {c:"salgados",t:"Chamuças",d:"Chamuças douradas, vendidas à dúzia.",p:200,u:"1 dúzia",img:19},
 {c:"bolos",t:"Bolo cítrico",d:"Bolo cítrico com cobertura e rodelas de fruta.",p:750,img:20},
-{c:"bolos",t:"Bolo no pote",d:"Bolo em camadas com creme, servido no pote.",p:150,img:21},
-{c:"bolos",t:"Bolinhos individuais",d:"Bolinhos macios com recheio de creme.",p:120,img:22},
-{c:"bolos",t:"Bolo de coco",d:"Bolo coberto com coco e morangos.",p:25,u:"por unidade",img:23}
+{c:"bolos",t:"Bolo no pote",d:"Bolo em camadas com creme, servido no pote.",p:120,img:21},
+{c:"bolos",t:"Bolinhos individuais",d:"Bolinhos macios com recheio de creme.",p:25,u:"cada",img:22},
+{c:"bolos",t:"Bolo de coco",d:"Bolo coberto com coco e morangos.",p:null,img:23},
+{c:"bolos",t:"Bolo no pote grande",d:"Bolo de chocolate em camadas, servido no pote grande.",p:150,u:"grande",img:24},
+{c:"bolos",t:"Bolo no pote pequeno",d:"Bolo de chocolate em camadas, servido no pote pequeno.",p:75,u:"pequeno",img:24}
 ];
 const $=s=>document.querySelector(s);const fmt=n=>n.toLocaleString("pt-PT")+" "+CFG.moeda;
 const wa=t=>`https://wa.me/${CFG.tel}?text=${encodeURIComponent(t)}`;
